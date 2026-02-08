@@ -7,7 +7,7 @@ export default function Contact() {
             <p className="font-mono text-[var(--green)] text-base mb-5 before:content-['04.'] before:mr-2">
                 What's Next?
             </p>
-            <h2 className="text-[clamp(40px,5vw,60px)] font-semibold text-[var(--lightest-slate)] mb-[100px]">
+            <h2 className="text-[clamp(40px,5vw,60px)] font-semibold text-[var(--lightest-slate)] mb-4">
                 Get In Touch
             </h2>
             <p className="text-[var(--slate)] leading-relaxed mb-0 max-w-lg">
