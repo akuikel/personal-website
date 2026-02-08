@@ -74,7 +74,7 @@ export default function About() {
                             src="/me.jpg"
                             alt="Aavash Kuikel"
                             fill
-                            className="object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                            className="object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
                         />
                         <div className="absolute inset-0 bg-[var(--green)] mix-blend-multiply opacity-50 group-hover:opacity-0 transition-opacity" />
                     </div>
