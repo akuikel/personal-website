@@ -47,11 +47,11 @@ export default function Projects() {
                 Some Things I've Built
             </h2>
 
-            <div className="space-y-56">
+            <div className="space-y-32 md:space-y-56">
                 {featuredProjects.map((project, i) => (
                     <div
                         key={i}
-                        className={`relative grid grid-cols-12 items-center gap-2 ${i % 2 === 0 ? "" : "text-right"
+                        className={`relative grid grid-cols-12 items-center gap-0 md:gap-2 ${i % 2 === 0 ? "" : "md:text-right"
                             }`}
                     >
                         {/* Project Image */}
@@ -59,10 +59,10 @@ export default function Projects() {
                             href={project.external || project.github || "#"}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={`col-span-12 md:col-span-7 relative h-[400px] md:h-[450px] rounded overflow-hidden group bg-[var(--light-navy)] block cursor-pointer ${i % 2 === 0 ? "md:col-start-1" : "md:col-start-6"
-                                } row-start-1`}
+                            className={`col-span-12 md:col-span-7 relative h-[250px] md:h-[450px] rounded overflow-hidden group bg-[var(--light-navy)] block cursor-pointer ${i % 2 === 0 ? "md:col-start-1" : "md:col-start-6"
+                                } md:row-start-1`}
                         >
-                            <div className="absolute inset-0 bg-[var(--green)] mix-blend-multiply opacity-40 group-hover:opacity-0 transition-opacity z-10" />
+                            <div className="absolute inset-0 bg-[var(--green)] mix-blend-multiply opacity-20 md:opacity-40 group-hover:opacity-0 transition-opacity z-10" />
                             <Image
                                 src={project.image}
                                 alt={project.title}
@@ -74,63 +74,65 @@ export default function Projects() {
 
                         {/* Project Content */}
                         <div
-                            className={`col-span-12 md:col-span-5 relative z-20 row-start-1 ${i % 2 === 0
+                            className={`col-span-12 md:col-span-6 lg:col-span-5 relative z-20 mt-[-20px] md:mt-0 md:row-start-1 ${i % 2 === 0
                                 ? "md:col-start-7 md:text-right"
                                 : "md:col-start-1 md:text-left"
                                 }`}
                         >
-                            <p className="font-mono text-sm text-[var(--green)] mb-2">
-                                Featured Project
-                            </p>
-                            <h3 className="text-2xl font-semibold text-[var(--lightest-slate)] mb-5">
-                                <a
-                                    href={project.external || project.github || "#"}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="hover:text-[var(--green)] transition-colors"
-                                >
-                                    {project.title}
-                                </a>
-                            </h3>
-                            <div className="bg-[var(--light-navy)] rounded shadow-lg mb-5" style={{ padding: '2rem' }}>
-                                <p className="text-[var(--light-slate)] text-sm leading-relaxed text-left">
-                                    {project.description}
+                            <div className="px-4 md:px-0">
+                                <p className="font-mono text-xs md:text-sm text-[var(--green)] mb-2">
+                                    Featured Project
                                 </p>
-                            </div>
-                            <ul
-                                className={`flex flex-wrap gap-3 font-mono text-xs text-[var(--light-slate)] mb-4 ${i % 2 === 0 ? "md:justify-end" : "md:justify-start"
-                                    }`}
-                            >
-                                {project.tech.map((tech, j) => (
-                                    <li key={j}>{tech}</li>
-                                ))}
-                            </ul>
-                            <div
-                                className={`flex gap-4 ${i % 2 === 0 ? "md:justify-end" : "md:justify-start"
-                                    }`}
-                            >
-                                {project.github && (
+                                <h3 className="text-xl md:text-2xl font-semibold text-[var(--lightest-slate)] mb-4 md:mb-5">
                                     <a
-                                        href={project.github}
+                                        href={project.external || project.github || "#"}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-[var(--lightest-slate)] hover:text-[var(--green)] transition-colors"
-                                        aria-label="GitHub"
+                                        className="hover:text-[var(--green)] transition-colors"
                                     >
-                                        <Github size={20} />
+                                        {project.title}
                                     </a>
-                                )}
-                                {project.external && (
-                                    <a
-                                        href={project.external}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-[var(--lightest-slate)] hover:text-[var(--green)] transition-colors"
-                                        aria-label="External Link"
-                                    >
-                                        <ExternalLink size={20} />
-                                    </a>
-                                )}
+                                </h3>
+                                <div className="bg-[var(--light-navy)] rounded shadow-lg mb-4 md:mb-5 p-5 md:p-8">
+                                    <p className="text-[var(--light-slate)] text-sm leading-relaxed text-left">
+                                        {project.description}
+                                    </p>
+                                </div>
+                                <ul
+                                    className={`flex flex-wrap gap-3 font-mono text-[10px] md:text-xs text-[var(--light-slate)] mb-4 ${i % 2 === 0 ? "md:justify-end" : "md:justify-start"
+                                        }`}
+                                >
+                                    {project.tech.map((tech, j) => (
+                                        <li key={j} className="whitespace-nowrap">{tech}</li>
+                                    ))}
+                                </ul>
+                                <div
+                                    className={`flex gap-4 ${i % 2 === 0 ? "md:justify-end" : "md:justify-start"
+                                        }`}
+                                >
+                                    {project.github && (
+                                        <a
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-[var(--lightest-slate)] hover:text-[var(--green)] transition-colors"
+                                            aria-label="GitHub"
+                                        >
+                                            <Github size={20} />
+                                        </a>
+                                    )}
+                                    {project.external && (
+                                        <a
+                                            href={project.external}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-[var(--lightest-slate)] hover:text-[var(--green)] transition-colors"
+                                            aria-label="External Link"
+                                        >
+                                            <ExternalLink size={20} />
+                                        </a>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     </div>
