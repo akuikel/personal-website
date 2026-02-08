@@ -1,3 +1,7 @@
+"use client";
+
+import Image from "next/image";
+
 const skills = [
     "JavaScript (ES6+)",
     "TypeScript",
@@ -66,8 +70,12 @@ export default function About() {
 
                 <div className="relative group mx-auto md:mx-0">
                     <div className="relative w-[280px] h-[280px] rounded bg-[var(--green)] overflow-hidden">
-                        {/* Placeholder for profile image - using gradient as placeholder */}
-                        <div className="w-full h-full bg-gradient-to-br from-[var(--green)] to-[var(--light-navy)] opacity-80 group-hover:opacity-100 transition-opacity" />
+                        <Image
+                            src="/me.jpg"
+                            alt="Aavash Kuikel"
+                            fill
+                            className="object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                        />
                         <div className="absolute inset-0 bg-[var(--green)] mix-blend-multiply opacity-50 group-hover:opacity-0 transition-opacity" />
                     </div>
                     <div className="absolute -z-10 w-[280px] h-[280px] rounded border-2 border-[var(--green)] top-5 left-5 group-hover:top-4 group-hover:left-4 transition-all" />
