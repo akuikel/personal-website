@@ -89,12 +89,12 @@ export default function Experience() {
 
             <div className="flex flex-col md:flex-row gap-4">
                 {/* Tab List */}
-                <div className="flex md:flex-col border-b md:border-b-0 md:border-l border-[var(--lightest-navy)] overflow-x-auto md:overflow-visible scrollbar-hide">
+                <div className="flex md:flex-col border-b md:border-b-0 md:border-l border-[var(--lightest-navy)] overflow-x-auto md:overflow-visible">
                     {experiences.map((exp, i) => (
                         <button
                             key={i}
                             onClick={() => setActiveTab(i)}
-                            className={`px-5 py-3 font-mono text-xs md:text-sm text-left whitespace-nowrap transition-all flex-shrink-0 min-w-[120px] md:min-w-0 ${activeTab === i
+                            className={`px-5 py-3 font-mono text-sm text-left whitespace-nowrap transition-all ${activeTab === i
                                 ? "text-[var(--green)] bg-[var(--light-navy)] border-b-2 md:border-b-0 md:border-l-2 border-[var(--green)] md:-ml-[2px]"
                                 : "text-[var(--slate)] hover:text-[var(--green)] hover:bg-[var(--light-navy)]"
                                 }`}
